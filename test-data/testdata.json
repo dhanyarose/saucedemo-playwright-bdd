@@ -1,0 +1,12 @@
+{
+  "login": {
+    "validUser": "standard_user",
+    "lockedOutUser": "locked_out_user",
+    "invalidUser": "invalid_user",
+    "passwordEnv": "TEST_PASSWORD"
+  },
+  "products": {
+    "backpack": "Sauce Labs Backpack",
+    "bikeLight": "Sauce Labs Bike Light"
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+playwright-report/
+test-results/
+reports/*
+!reports/.gitkeep
+.env
+.env.*
+!.env.example
+testcases/*.docx
+.playwright-mcp/

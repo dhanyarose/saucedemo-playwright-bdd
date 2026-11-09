@@ -1,0 +1,31 @@
+{
+  "name": "saucedemo-playwright-bdd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cucumber and Playwright automation for the supplied SauceDemo test cases.",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:regression": "cucumber-js --tags @regression",
+    "test:headed": "cross-env HEADLESS=false cucumber-js",
+    "test:dev": "cross-env TEST_ENV=dev cucumber-js",
+    "test:qa": "cross-env TEST_ENV=qa cucumber-js",
+    "test:staging": "cross-env TEST_ENV=staging cucumber-js",
+    "test:inventory": "node scripts/import-test-cases.cjs",
+    "typecheck": "tsc --noEmit",
+    "allure:generate": "allure generate reports/allure-results --clean -o reports/allure-report",
+    "allure:open": "allure open reports/allure-report",
+    "clean:reports": "node -e \"require('node:fs').rmSync('reports',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
+    "@playwright/test": "^1.65.0",
+    "allure-commandline": "^2.34.0",
+    "allure-cucumberjs": "^3.14.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.6.1",
+    "playwright": "^1.65.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
