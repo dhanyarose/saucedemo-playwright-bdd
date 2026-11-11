@@ -1,11 +1,12 @@
 import { World, setWorldConstructor } from "@cucumber/cucumber";
-import type { Browser, BrowserContext, Page } from "playwright";
+import type { Browser, BrowserContext, Download, Page } from "playwright";
 import { getEnvironment } from "../../config/environments";
 
 export class TestWorld extends World {
   browser?: Browser;
   context?: BrowserContext;
   page?: Page;
+  orderDownload?: Download;
 
   get baseURL(): string {
     return getEnvironment().baseURL;

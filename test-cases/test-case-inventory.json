@@ -1,1608 +1,806 @@
 {
-  "generatedAt": "2026-11-09T10:08:14.691Z",
-  "sourceFormatNote": "The supplied .docx files contain UTF-8 tab-delimited text, not binary Word documents.",
+  "source": "testcases/TestcasesEndToEnd.docx",
+  "sourceFormatNote": "The supplied .docx file contains UTF-8 tab-delimited text rather than a binary Word document.",
   "cases": [
     {
-      "id": "TC_UI_01",
-      "title": "Page loads correctly",
+      "id": "TC-LOGIN-001",
+      "title": "Verify login page loads",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Open the URL"
-      ],
-      "testData": {},
-      "expectedResult": "Login page loads with the “Swag Labs” title and no broken elements",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_02",
-      "title": "Username field is present",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Observe the form"
-      ],
-      "testData": {},
-      "expectedResult": "Username input is visible with placeholder “Username”",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_03",
-      "title": "Password field is present",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Observe the form"
-      ],
-      "testData": {},
-      "expectedResult": "Password input is visible with placeholder “Password”",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_04",
-      "title": "Login button is present",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Observe the form"
-      ],
-      "testData": {},
-      "expectedResult": "Green “Login” button is visible and enabled",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_05",
-      "title": "Credentials info section",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Scroll to the bottom panel"
-      ],
-      "testData": {},
-      "expectedResult": "“Accepted usernames are” lists all 6 users, and “Password for all users” shows [REDACTED: TEST_PASSWORD]",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_06",
-      "title": "Password is masked",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Type [REDACTED: TEST_PASSWORD] in the Password field"
-      ],
-      "testData": {},
-      "expectedResult": "Characters appear as dots/asterisks",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_07",
-      "title": "Page title and favicon",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Check the browser tab"
-      ],
-      "testData": {},
-      "expectedResult": "Correct tab title is displayed",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_08",
-      "title": "Field focus",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Click each field"
-      ],
-      "testData": {},
-      "expectedResult": "Cursor appears and the field shows focus styling",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_09",
-      "title": "Tab order",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Press Tab repeatedly"
-      ],
-      "testData": {},
-      "expectedResult": "Focus moves Username → Password → Login",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_UI_10",
-      "title": "Responsive layout",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Resize to mobile, tablet and desktop widths"
-      ],
-      "testData": {},
-      "expectedResult": "Layout adjusts with no overlapping or cut-off elements",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_01",
-      "title": "Login with standard_user",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "standard_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Redirected to /inventory.html, “Products” page shown",
+      "testData": {},
+      "expectedResult": "Login page displays username, password and Login button.",
       "automationStatus": "automated",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": "features/login.feature"
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-001] Verify login page loads",
+      "disposition": "Scenario: [TC-LOGIN-001] Verify login page loads"
     },
     {
-      "id": "TC_FN_02",
-      "title": "Login with problem_user",
+      "id": "TC-LOGIN-002",
+      "title": "Login with valid credentials",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "problem_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login succeeds; inventory page loads (known UI issues like wrong product images may appear)",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_03",
-      "title": "Login with performance_glitch_user",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "performance_glitch_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login succeeds but takes noticeably longer",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_04",
-      "title": "Login with error_user",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "error_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login succeeds; errors may occur on later actions",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_05",
-      "title": "Login with visual_user",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "visual_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login succeeds; visual differences may appear on inventory page",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_06",
-      "title": "Login using the Enter key",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Enter valid credentials, press Enter"
-      },
-      "expectedResult": "Login succeeds, same as clicking Login",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_07",
-      "title": "Logout after login",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Log in, open menu, click Logout"
-      },
-      "expectedResult": "Returned to the login page and fields are cleared",
-      "automationStatus": "automated",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": "features/login.feature"
-    },
-    {
-      "id": "TC_FN_08",
-      "title": "Back button after logout",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Log out, click the browser Back button"
-      },
-      "expectedResult": "User is not logged back in; the login page or an error shows",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_FN_09",
-      "title": "Session persistence",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Log in, refresh the inventory page"
-      },
-      "expectedResult": "User stays logged in",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_01",
-      "title": "Locked-out user",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "locked_out_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Error: “Epic sadface: Sorry, this user has been locked out.”",
-      "automationStatus": "automated",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": "features/login.feature"
-    },
-    {
-      "id": "TC_NG_02",
-      "title": "Invalid username, valid password",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "invalid_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Error: “Username and password do not match any user in this service”",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_03",
-      "title": "Valid username, invalid password",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "standard_user / wrong_pass"
-      },
-      "expectedResult": "Same “do not match” error",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_04",
-      "title": "Both invalid",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "abc / xyz"
-      },
-      "expectedResult": "Same “do not match” error",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_05",
-      "title": "Both fields empty",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "(blank) / (blank)"
-      },
-      "expectedResult": "Error: “Username is required”",
-      "automationStatus": "automated",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": "features/login.feature"
-    },
-    {
-      "id": "TC_NG_06",
-      "title": "Username only",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "standard_user / (blank)"
-      },
-      "expectedResult": "Error: “Password is required”",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_07",
-      "title": "Password only",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "(blank) / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Error: “Username is required”",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_08",
-      "title": "Username is case-sensitive",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "STANDARD_USER / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login fails with “do not match” error",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_09",
-      "title": "Password is case-sensitive",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "standard_user / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login fails with “do not match” error",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_10",
-      "title": "Leading/trailing spaces in username",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "“ standard_user “ / [REDACTED: TEST_PASSWORD]"
-      },
-      "expectedResult": "Login fails (no auto-trim), or the behavior is documented",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_11",
-      "title": "Spaces in password",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "standard_user / “ [REDACTED: TEST_PASSWORD] “"
-      },
-      "expectedResult": "Login fails",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_12",
-      "title": "Spaces only",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "“ “ / “ “"
-      },
-      "expectedResult": "Login fails with an error",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_13",
-      "title": "Username and password swapped",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "[REDACTED: TEST_PASSWORD] / standard_user"
-      },
-      "expectedResult": "Login fails",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_NG_14",
-      "title": "Direct URL access without login",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Open /inventory.html directly"
-      },
-      "expectedResult": "Redirected to login with: “You can only access ‘/inventory.html’ when you are logged in.”",
-      "automationStatus": "automated",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": "features/login.feature"
-    },
-    {
-      "id": "TC_ER_01",
-      "title": "Error styling",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [
-        "Trigger any error"
-      ],
       "testData": {},
-      "expectedResult": "Red error banner appears above the Login button, and the fields show error icons/highlight",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "User successfully navigates to inventory page.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-002] Login with valid credentials",
+      "disposition": "Scenario: [TC-LOGIN-002] Login with valid credentials"
     },
     {
-      "id": "TC_ER_02",
-      "title": "Dismiss error",
+      "id": "TC-LOGIN-003",
+      "title": "Login with both fields empty",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
-      "steps": [
-        "Click the “X” on the banner"
-      ],
+      "steps": [],
       "testData": {},
-      "expectedResult": "Error message is removed",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Required username validation appears.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-003] Login with both fields empty",
+      "disposition": "Scenario: [TC-LOGIN-003] Login with both fields empty"
     },
     {
-      "id": "TC_ER_03",
-      "title": "Error clears on success",
+      "id": "TC-LOGIN-004",
+      "title": "Login with username only",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
-      "steps": [
-        "Fail login, then enter valid credentials"
-      ],
+      "steps": [],
       "testData": {},
-      "expectedResult": "Login succeeds and the error no longer shows",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Password-required validation appears.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-004] Login with username only",
+      "disposition": "Scenario: [TC-LOGIN-004] Login with username only"
     },
     {
-      "id": "TC_ER_04",
-      "title": "Error message doesn’t leak info",
+      "id": "TC-LOGIN-005",
+      "title": "Login with password only",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
-      "steps": [
-        "Try an invalid username versus an invalid password"
-      ],
+      "steps": [],
       "testData": {},
-      "expectedResult": "Both show the same generic message, so valid usernames can’t be enumerated",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Username-required validation appears.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-005] Login with password only",
+      "disposition": "Scenario: [TC-LOGIN-005] Login with password only"
     },
     {
-      "id": "TC_SC_01",
-      "title": "SQL injection",
+      "id": "TC-LOGIN-006",
+      "title": "Login with invalid username",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "' OR '1'='1 in both fields"
-      },
-      "expectedResult": "Login fails; no SQL error or bypass",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "testData": {},
+      "expectedResult": "Appropriate authentication error appears.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-006] Login with invalid username",
+      "disposition": "Scenario: [TC-LOGIN-006] Login with invalid username"
     },
     {
-      "id": "TC_SC_02",
-      "title": "XSS in username",
+      "id": "TC-LOGIN-007",
+      "title": "Login with invalid password",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "<script>alert(1)</script>"
-      },
-      "expectedResult": "Script is not executed; login fails",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "testData": {},
+      "expectedResult": "Appropriate authentication error appears.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-007] Login with invalid password",
+      "disposition": "Scenario: [TC-LOGIN-007] Login with invalid password"
     },
     {
-      "id": "TC_SC_03",
-      "title": "Very long input",
+      "id": "TC-LOGIN-008",
+      "title": "Login with invalid username and password",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "500+ characters in each field"
-      },
-      "expectedResult": "App handles it gracefully, with no crash or layout break",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "testData": {},
+      "expectedResult": "Login is rejected.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-008] Login with invalid username and password",
+      "disposition": "Scenario: [TC-LOGIN-008] Login with invalid username and password"
     },
     {
-      "id": "TC_SC_04",
-      "title": "Special characters",
+      "id": "TC-LOGIN-009",
+      "title": "Login using locked_out_user",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "!@#$%^&*()"
-      },
-      "expectedResult": "Login fails with the standard error; no crash",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "testData": {},
+      "expectedResult": "User receives locked-out error message.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-009] Login using locked_out_user",
+      "disposition": "Scenario: [TC-LOGIN-009] Login using locked_out_user"
     },
     {
-      "id": "TC_SC_05",
-      "title": "Copy from password field",
+      "id": "TC-LOGIN-010",
+      "title": "Login using problem_user",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
-      "testData": {
-        "sourceValue": "Type a password, try Ctrl+C"
-      },
-      "expectedResult": "Masked value can’t be copied as plain text",
+      "testData": {},
+      "expectedResult": "Login behaviour and known UI anomalies are verified.",
+      "automationStatus": "candidate",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-010] Login using problem_user",
+      "disposition": "The source mentions known problem_user UI anomalies but does not identify their expected appearance; only login and inventory rendering are covered."
+    },
+    {
+      "id": "TC-LOGIN-011",
+      "title": "Login using performance_glitch_user",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "User logs in; inventory eventually loads.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-011] Login using performance_glitch_user",
+      "disposition": "Scenario: [TC-LOGIN-011] Login using performance_glitch_user"
+    },
+    {
+      "id": "TC-LOGIN-012",
+      "title": "Login using error_user",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Account-specific behaviour is verified.",
+      "automationStatus": "candidate",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-012] Login using error_user",
+      "disposition": "The source says to verify account-specific behavior but does not state the behavior expected for error_user; only successful login is covered."
+    },
+    {
+      "id": "TC-LOGIN-013",
+      "title": "Login using visual_user",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "User logs in and UI layout is checked.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-013] Login using visual_user",
+      "disposition": "Scenario: [TC-LOGIN-013] Login using visual_user"
+    },
+    {
+      "id": "TC-LOGIN-014",
+      "title": "Verify password masking",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Password characters are masked.",
+      "automationStatus": "automated",
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-014] Verify password masking",
+      "disposition": "Scenario: [TC-LOGIN-014] Verify password masking"
+    },
+    {
+      "id": "TC-LOGIN-015",
+      "title": "Enter script or SQL-like input",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Input is handled safely; no unauthorized login or script execution occurs.",
       "automationStatus": "manual-only",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "feature": "Login test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "",
+      "scenarioName": "",
+      "disposition": "Security payload execution is not run against the public shared demo without an explicitly authorized test target."
     },
     {
-      "id": "TC_SC_06",
-      "title": "Password not in URL",
+      "id": "TC-INV-001",
+      "title": "Verify inventory page after login",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Submit login"
-      },
-      "expectedResult": "Credentials never appear in the URL or query string",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_SC_07",
-      "title": "HTTPS",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Check the URL"
-      },
-      "expectedResult": "Page is served over HTTPS",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_SC_08",
-      "title": "Repeated failed attempts",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "5–10 wrong logins in a row"
-      },
-      "expectedResult": "Note the behavior (no lockout is expected on this demo site)",
-      "automationStatus": "candidate",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_SC_09",
-      "title": "Autofill / password manager",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
-      ],
-      "steps": [],
-      "testData": {
-        "sourceValue": "Save credentials, revisit"
-      },
-      "expectedResult": "Browser autofill works without breaking the form",
-      "automationStatus": "manual-only",
-      "feature": "login",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_CP_01",
-      "title": "Chrome, Firefox, Edge, Safari",
-      "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Login works the same in all browsers",
-      "automationStatus": "manual-only",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Product listing and sorting controls are displayed.",
+      "automationStatus": "automated",
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-001] Verify inventory page after login",
+      "disposition": "Scenario: [TC-INV-001] Verify inventory page after login"
     },
     {
-      "id": "TC_CP_02",
-      "title": "Mobile browsers (Android/iOS)",
+      "id": "TC-INV-002",
+      "title": "Verify all products are displayed",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Form is usable and login works",
-      "automationStatus": "manual-only",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Expected products appear without duplication.",
+      "automationStatus": "automated",
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-002] Verify all products are displayed without duplication",
+      "disposition": "Scenario: [TC-INV-002] Verify all products are displayed without duplication"
     },
     {
-      "id": "TC_CP_03",
-      "title": "Page load time",
+      "id": "TC-INV-003",
+      "title": "Sort products by Name A to Z",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Login page loads within about 3 seconds",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Products appear alphabetically ascending.",
+      "automationStatus": "automated",
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-003] Sort products by Name A to Z",
+      "disposition": "Scenario: [TC-INV-003] Sort products by Name A to Z"
     },
     {
-      "id": "TC_CP_04",
-      "title": "Login response time (standard_user)",
+      "id": "TC-INV-004",
+      "title": "Sort products by Name Z to A",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Redirect happens within about 2 seconds",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Products appear alphabetically descending.",
+      "automationStatus": "automated",
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-004] Sort products by Name Z to A",
+      "disposition": "Scenario: [TC-INV-004] Sort products by Name Z to A"
     },
     {
-      "id": "TC_CP_05",
-      "title": "Login time (performance_glitch_user)",
+      "id": "TC-INV-005",
+      "title": "Sort products by Price low to high",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Measure and record the delay (usually a few seconds)",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Products appear in ascending price order.",
+      "automationStatus": "automated",
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-005] Sort products by Price low to high",
+      "disposition": "Scenario: [TC-INV-005] Sort products by Price low to high"
     },
     {
-      "id": "TC_CP_06",
-      "title": "Refresh on the login page",
+      "id": "TC-INV-006",
+      "title": "Sort products by Price high to low",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Page reloads with empty fields",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
+      "expectedResult": "Products appear in descending price order.",
+      "automationStatus": "automated",
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-006] Sort products by Price high to low",
+      "disposition": "Scenario: [TC-INV-006] Sort products by Price high to low"
     },
     {
-      "id": "TC_CP_07",
-      "title": "Slow network (throttled 3G)",
+      "id": "TC-INV-007",
+      "title": "Change sorting options repeatedly",
       "preconditions": [
-        "Browser is open at https://www.saucedemo.com"
+        "Browser is open at the configured SauceDemo environment."
       ],
       "steps": [],
       "testData": {},
-      "expectedResult": "Login still completes, with no duplicate submissions",
-      "automationStatus": "manual-only",
-      "feature": "performance-security",
-      "source": "loginTestcases.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_001",
-      "title": "Verify inventory page loads",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Product listing updates correctly for every selection.",
       "automationStatus": "automated",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
+      "feature": "Inventory and product sorting",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-007] Change sorting options repeatedly",
+      "disposition": "Scenario: [TC-INV-007] Change sorting options repeatedly"
     },
     {
-      "id": "TC_002",
-      "title": "Verify Products heading",
-      "preconditions": [],
+      "id": "TC-CART-001",
+      "title": "Add Sauce Labs Backpack to cart",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Product is added and cart badge displays 1.",
       "automationStatus": "automated",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-001] Add Sauce Labs Backpack to cart",
+      "disposition": "Scenario: [TC-CART-001] Add Sauce Labs Backpack to cart"
     },
     {
-      "id": "TC_003",
-      "title": "Verify product list",
-      "preconditions": [],
+      "id": "TC-CART-002",
+      "title": "Add multiple products to cart",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Both products are added and badge displays correct count.",
       "automationStatus": "automated",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-002] Add multiple products to cart",
+      "disposition": "Scenario: [TC-CART-002] Add multiple products to cart"
     },
     {
-      "id": "TC_004",
-      "title": "Verify product images",
-      "preconditions": [],
+      "id": "TC-CART-003",
+      "title": "Open shopping cart",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_005",
-      "title": "Verify product name",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_006",
-      "title": "Verify product description",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_007",
-      "title": "Verify product price",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_008",
-      "title": "Verify Add to Cart button",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_009",
-      "title": "Click Add to Cart",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Selected product, price and quantity are displayed.",
       "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-003] Open shopping cart and verify item details",
+      "disposition": "Scenario: [TC-CART-003] Open shopping cart and verify item details"
     },
     {
-      "id": "TC_010",
-      "title": "Verify cart badge",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
-    },
-    {
-      "id": "TC_011",
-      "title": "Add multiple products",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_012",
-      "title": "Verify product details navigation",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_013",
-      "title": "Click shopping cart icon",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_014",
-      "title": "Click hamburger menu",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_015",
-      "title": "Verify menu options",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_016",
-      "title": "Verify default sorting",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
-    },
-    {
-      "id": "TC_017",
-      "title": "Select Name (Z to A)",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
-    },
-    {
-      "id": "TC_018",
-      "title": "Select Price (low to high)",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
-    },
-    {
-      "id": "TC_019",
-      "title": "Select Price (high to low)",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": "features/inventory.feature"
-    },
-    {
-      "id": "TC_020",
-      "title": "Change sorting multiple times",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_021",
-      "title": "Verify sorting with cart items",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_022",
-      "title": "Add one product to cart",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
-    },
-    {
-      "id": "TC_023",
-      "title": "Add two different products",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
-    },
-    {
-      "id": "TC_024",
-      "title": "Add all available products",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_025",
-      "title": "Remove an added product",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
-    },
-    {
-      "id": "TC_026",
-      "title": "Verify button after adding product",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_027",
+      "id": "TC-CART-004",
       "title": "Remove product from inventory page",
-      "preconditions": [],
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Product is removed and cart count updates.",
       "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-004] Remove product from inventory page",
+      "disposition": "Scenario: [TC-CART-004] Remove product from inventory page"
     },
     {
-      "id": "TC_028",
-      "title": "Navigate to cart after adding products",
-      "preconditions": [],
+      "id": "TC-CART-005",
+      "title": "Remove product from cart page",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Product is removed from cart.",
       "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-005] Remove product from cart page",
+      "disposition": "Scenario: [TC-CART-005] Remove product from cart page"
     },
     {
-      "id": "TC_029",
-      "title": "Navigate back to inventory",
-      "preconditions": [],
+      "id": "TC-CART-006",
+      "title": "Attempt checkout with empty cart",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
+      "expectedResult": "No order can be created without products.",
+      "automationStatus": "blocked",
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "",
+      "scenarioName": "",
+      "disposition": "Live SauceDemo accepts the empty cart into checkout and displays a Finish action at a $0.00 total; the documented expected result does not match the application."
+    },
+    {
+      "id": "TC-CART-007",
+      "title": "Click Continue Shopping",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "User returns to inventory page.",
       "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
+      "feature": "Shopping cart test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-007] Continue shopping from the cart",
+      "disposition": "Scenario: [TC-CART-007] Continue shopping from the cart"
     },
     {
-      "id": "TC_030",
-      "title": "Verify product price in cart",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-001",
+      "title": "Navigate from cart to checkout",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Checkout information form is displayed.",
       "automationStatus": "automated",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": "features/cart.feature"
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-001] Navigate from cart to checkout",
+      "disposition": "Scenario: [TC-CHECKOUT-001] Navigate from cart to checkout"
     },
     {
-      "id": "TC_031",
-      "title": "Access inventory page without login",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-002",
+      "title": "Enter all valid checkout information",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "User navigates to checkout overview.",
+      "automationStatus": "automated",
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-002] Enter all valid checkout information",
+      "disposition": "Scenario: [TC-CHECKOUT-002] Enter all valid checkout information"
     },
     {
-      "id": "TC_032",
-      "title": "Refresh inventory page",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-003",
+      "title": "Submit all fields empty",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "Required-field validation appears.",
+      "automationStatus": "automated",
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-003] Submit all fields empty",
+      "disposition": "Scenario: [TC-CHECKOUT-003] Submit all fields empty"
     },
     {
-      "id": "TC_033",
-      "title": "Use browser back button",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-004",
+      "title": "Submit without First Name",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "First Name validation appears.",
+      "automationStatus": "automated",
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-004] Submit without First Name",
+      "disposition": "Scenario: [TC-CHECKOUT-004] Submit without First Name"
     },
     {
-      "id": "TC_034",
-      "title": "Use browser forward button",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-005",
+      "title": "Submit without Last Name",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "Last Name validation appears.",
+      "automationStatus": "automated",
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-005] Submit without Last Name",
+      "disposition": "Scenario: [TC-CHECKOUT-005] Submit without Last Name"
     },
     {
-      "id": "TC_035",
-      "title": "Try accessing cart without login",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-006",
+      "title": "Submit without Zip Code",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "Zip Code validation appears.",
+      "automationStatus": "automated",
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-006] Submit without Zip Code",
+      "disposition": "Scenario: [TC-CHECKOUT-006] Submit without Zip Code"
     },
     {
-      "id": "TC_036",
-      "title": "Click Add to Cart multiple times rapidly",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-007",
+      "title": "Enter short and long values",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_037",
-      "title": "Verify unavailable product image",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_038",
-      "title": "Verify product with missing price",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Valid values within supported limits are accepted.",
       "automationStatus": "blocked",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "",
+      "scenarioName": "",
+      "disposition": "The source does not define the supported short/long input limits, so a boundary value cannot be chosen without inventing a rule."
     },
     {
-      "id": "TC_039",
-      "title": "Verify product with long description",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-008",
+      "title": "Enter whitespace-only values",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "inventory",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_040",
-      "title": "Change sorting while navigating",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "sorting",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_041",
-      "title": "Verify page alignment",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_042",
-      "title": "Verify product card dimensions",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_043",
-      "title": "Verify image alignment",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_044",
-      "title": "Verify font consistency",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_045",
-      "title": "Verify button alignment",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_046",
-      "title": "Verify product price format",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_047",
-      "title": "Verify page scrolling",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_048",
-      "title": "Verify browser zoom at 80%, 100%, and 125%",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "manual-only",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_049",
-      "title": "Verify responsive layout",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_050",
-      "title": "Verify horizontal scrolling",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "ui",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_051",
-      "title": "Navigate using keyboard Tab",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_052",
-      "title": "Navigate using Enter key",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_053",
-      "title": "Verify keyboard focus",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_054",
-      "title": "Verify image alternative text",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "manual-only",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_055",
-      "title": "Verify screen reader compatibility",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "manual-only",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_056",
-      "title": "Verify color contrast",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "manual-only",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_057",
-      "title": "Verify dropdown accessibility",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "accessibility",
-      "source": "saucedemo.docx",
-      "automationFile": ""
-    },
-    {
-      "id": "TC_058",
-      "title": "Measure inventory page load time",
-      "preconditions": [],
-      "steps": [],
-      "testData": {},
-      "expectedResult": "",
+      "expectedResult": "Whitespace-only required fields are rejected.",
       "automationStatus": "blocked",
-      "feature": "performance-security",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "",
+      "scenarioName": "",
+      "disposition": "Live SauceDemo accepts whitespace-only checkout fields and advances to the overview, contradicting the documented rejection expectation."
     },
     {
-      "id": "TC_059",
-      "title": "Measure product image loading",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-009",
+      "title": "Click Cancel during checkout",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "User exits checkout without placing an order.",
+      "automationStatus": "automated",
+      "feature": "Checkout information test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-009] Cancel during checkout",
+      "disposition": "Scenario: [TC-CHECKOUT-009] Cancel during checkout"
     },
     {
-      "id": "TC_060",
-      "title": "Verify repeated sorting performance",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-010",
+      "title": "Verify order overview for one product",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "Product, quantity, item total, tax and final total are correct.",
+      "automationStatus": "automated",
+      "feature": "Checkout overview test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-overview.feature",
+      "scenarioName": "[TC-CHECKOUT-010] Verify order overview for one product",
+      "disposition": "Scenario: [TC-CHECKOUT-010] Verify order overview for one product"
     },
     {
-      "id": "TC_061",
-      "title": "Verify session expiration",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-011",
+      "title": "Verify order overview for multiple products",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "blocked",
-      "feature": "performance-security",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "All products and calculated totals are correct.",
+      "automationStatus": "automated",
+      "feature": "Checkout overview test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-overview.feature",
+      "scenarioName": "[TC-CHECKOUT-011] Verify order overview for multiple products",
+      "disposition": "Scenario: [TC-CHECKOUT-011] Verify order overview for multiple products"
     },
     {
-      "id": "TC_062",
-      "title": "Verify direct URL access",
-      "preconditions": [],
+      "id": "TC-CHECKOUT-012",
+      "title": "Cancel checkout from overview",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "performance-security",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "User exits checkout without completing the order.",
+      "automationStatus": "automated",
+      "feature": "Checkout overview test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-checkout-overview.feature",
+      "scenarioName": "[TC-CHECKOUT-012] Cancel checkout from overview",
+      "disposition": "Scenario: [TC-CHECKOUT-012] Cancel checkout from overview"
     },
     {
-      "id": "TC_063",
-      "title": "Verify logout",
-      "preconditions": [],
+      "id": "TC-ORDER-001",
+      "title": "Click Finish to complete order",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "candidate",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "Order confirmation page is displayed.",
+      "automationStatus": "automated",
+      "feature": "Order completion and PDF generation",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-001] Finish checkout and display confirmation",
+      "disposition": "Scenario: [TC-ORDER-001] Finish checkout and display confirmation"
     },
     {
-      "id": "TC_064",
-      "title": "Verify browser storage after logout",
-      "preconditions": [],
+      "id": "TC-ORDER-002",
+      "title": "Verify order confirmation details",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
       "steps": [],
       "testData": {},
-      "expectedResult": "",
-      "automationStatus": "blocked",
-      "feature": "cart",
-      "source": "saucedemo.docx",
-      "automationFile": ""
+      "expectedResult": "Success message and order confirmation information appear.",
+      "automationStatus": "automated",
+      "feature": "Order completion and PDF generation",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-002] Verify order confirmation details",
+      "disposition": "Scenario: [TC-ORDER-002] Verify order confirmation details"
+    },
+    {
+      "id": "TC-ORDER-003",
+      "title": "Refresh confirmation page",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Refresh does not create a duplicate order.",
+      "automationStatus": "automated",
+      "feature": "Order completion and PDF generation",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-003] Refresh confirmation page",
+      "disposition": "Scenario: [TC-ORDER-003] Refresh confirmation page"
+    },
+    {
+      "id": "TC-ORDER-004",
+      "title": "Click Generate PDF order",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "PDF is generated and downloaded successfully.",
+      "automationStatus": "automated",
+      "feature": "Order completion and PDF generation",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-004] Generate and download the order PDF",
+      "disposition": "Scenario: [TC-ORDER-004] Generate and download the order PDF"
+    },
+    {
+      "id": "TC-ORDER-005",
+      "title": "Generate PDF when browser downloads are blocked",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Application handles the blocked download gracefully.",
+      "automationStatus": "manual-only",
+      "feature": "Order completion and PDF generation",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "",
+      "scenarioName": "",
+      "disposition": "Browser download-blocking behavior requires a defined browser policy and expected user-facing message."
+    },
+    {
+      "id": "TC-ORDER-006",
+      "title": "Navigate home after order completion",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "User returns to inventory page.",
+      "automationStatus": "automated",
+      "feature": "Order completion and PDF generation",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-006] Navigate home after order completion",
+      "disposition": "Scenario: [TC-ORDER-006] Navigate home after order completion"
+    },
+    {
+      "id": "TC-SESSION-001",
+      "title": "Logout from application",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "User returns to login page.",
+      "automationStatus": "automated",
+      "feature": "Session management test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-session-management.feature",
+      "scenarioName": "[TC-SESSION-001] Logout from application",
+      "disposition": "Scenario: [TC-SESSION-001] Logout from application"
+    },
+    {
+      "id": "TC-SESSION-002",
+      "title": "Press browser Back after logout",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Protected inventory content is not accessible as an authenticated session.",
+      "automationStatus": "automated",
+      "feature": "Session management test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-session-management.feature",
+      "scenarioName": "[TC-SESSION-002] Press browser Back after logout",
+      "disposition": "Scenario: [TC-SESSION-002] Press browser Back after logout"
+    },
+    {
+      "id": "TC-SESSION-003",
+      "title": "Reset application state",
+      "preconditions": [
+        "Browser is open at the configured SauceDemo environment."
+      ],
+      "steps": [],
+      "testData": {},
+      "expectedResult": "Cart and application state return to initial state.",
+      "automationStatus": "automated",
+      "feature": "Session management test cases",
+      "source": "TestcasesEndToEnd.docx",
+      "automationFile": "features/e2e-session-management.feature",
+      "scenarioName": "[TC-SESSION-003] Reset application state",
+      "disposition": "Scenario: [TC-SESSION-003] Reset application state"
     }
   ]
 }

@@ -22,7 +22,7 @@ The runner requires an explicit environment selection and URL and fails immediat
 
 ```text
 config/                 Environment validation
-features/               Login, inventory, and cart Gherkin scenarios
+features/               Original and end-to-end login, inventory, cart, checkout, order, and session scenarios
 src/pages/              Page objects and observed UI locators
 src/steps/              Cucumber step definitions
 src/support/            Per-scenario browser lifecycle and failure artifacts
@@ -38,9 +38,9 @@ reports/                 Allure results and failure traces (generated)
 
 ## Source cases and traceability
 
-The files named `loginTestcases.docx` and `saucedemo.docx` currently contain tab-delimited UTF-8 text rather than binary DOCX documents. `npm run test:inventory` exports their text to `test-cases/*.md` and regenerates the JSON inventory, analysis, and traceability matrix. The exported text redacts the shared test password; original input files are excluded from Git. The importer refuses binary DOCX input instead of silently corrupting tables; convert genuine Word documents to the same tab-delimited source format before using this importer.
+The current end-to-end source is `testcases/TestcasesEndToEnd.docx`. It contains 50 SauceDemo cases covering login, inventory, cart, checkout, order completion, and sessions. The file is UTF-8 tab-delimited text with a `.docx` extension, not a binary Word document. Test data is in `test-data/testdata.json`; the password is read from `TEST_PASSWORD`, not stored in JSON.
 
-Every source ID is present in `test-cases/traceability-matrix.md`. The matrix distinguishes automated scenarios from candidates, blocked cases, and cases that require capabilities outside this Chromium desktop suite. Candidate status does not mean a test is implemented or passed.
+The new Gherkin files are `features/e2e-*.feature`; their ID-specific step definitions are under `src/steps/TC_*.steps.ts`, with checkout and order page objects under `src/pages/`. Run `npm run test:end-to-end:inventory` to regenerate the extracted source, inventory, analysis, and traceability matrix after updating the sheet. See `test-cases/traceability-matrix.md` for every source ID and its implementation status. Cases with undefined acceptance criteria, missing boundary limits, or app behavior that conflicts with the expected result are marked blocked or manual-only rather than reported as passing.
 
 ## Running tests
 
@@ -52,10 +52,13 @@ npm run test:smoke
 npm run test:regression
 npm run test:qa
 npm run test:headed
-npx cucumber-js --tags "@TC_FN_01"
+npm run test:end-to-end
+npm run test:end-to-end:headed
+npm run test:end-to-end:smoke
+npx cucumber-js --tags "@TC-LOGIN-002"
 ```
 
-`test:headed` launches a visible Chromium browser (rather than the headless default). `test:dev`, `test:qa`, and `test:staging` select those environments explicitly; the corresponding URL must still be configured. Scenario tags preserve source IDs, so individual cases can be selected with `--tags "@TC_001"`.
+`test:headed` launches a visible Chromium browser (rather than the headless default). `test:dev`, `test:qa`, and `test:staging` select those environments explicitly; the corresponding URL must still be configured. Scenario tags preserve source IDs, so individual cases can be selected with `--tags "@TC-INV-003"`.
 
 ## Reports and failures
 
@@ -73,11 +76,11 @@ Allure results require a successful test run; the report generator requires Java
 1. Add the source case and keep its original ID.
 2. Add a Gherkin scenario with `[TC_ID]` in its name and `@TC_ID` tag.
 3. Reuse or extend the relevant page object and step definitions; do not put selectors in feature files.
-4. Run `npm run test:inventory` to refresh inventory and traceability.
+4. Run `npm run test:end-to-end:inventory` to refresh the end-to-end inventory and traceability.
 5. Run the tagged scenario, then `npm run typecheck`.
 
 ## Current coverage and limitations
 
-The current features automate the core login, logout, protected-route, inventory ordering, and cart journeys. The generated matrix lists all source IDs and their current status. Accessibility, mobile/cross-browser compatibility, visual inspection, actual password-manager behavior, and network throttling are not claimed as automated. Cases with undefined acceptance criteria are marked blocked for clarification.
+The original features cover login, logout, protected-route, inventory ordering, and cart journeys. The updated 50-case sheet has 43 fully automated cases, 2 partially covered candidates, 3 blocked cases, and 2 manual-only cases. Runnable end-to-end features cover login, inventory, cart, checkout, order-completion/PDF, and session flows. The SQL/XSS input scenario, browser-download-blocking behavior, ambiguous checkout boundary limits, and the empty-cart/whitespace checkout expectations are not treated as covered until their target behavior or authorization requirements are clarified.
 
-The supplied source lists the shared SauceDemo demo credential. The username and product data are stored in JSON; the password is read only from `TEST_PASSWORD`.
+The username, product, and checkout test values are in JSON; the password is read only from `TEST_PASSWORD`.

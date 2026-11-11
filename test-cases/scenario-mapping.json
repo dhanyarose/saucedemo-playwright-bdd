@@ -1,0 +1,405 @@
+{
+  "source": "testcases/TestcasesEndToEnd.docx",
+  "scenarios": [
+    {
+      "sourceId": "TC-LOGIN-001",
+      "title": "Verify login page loads",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-001] Verify login page loads",
+      "disposition": "Scenario: [TC-LOGIN-001] Verify login page loads"
+    },
+    {
+      "sourceId": "TC-LOGIN-002",
+      "title": "Login with valid credentials",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-002] Login with valid credentials",
+      "disposition": "Scenario: [TC-LOGIN-002] Login with valid credentials"
+    },
+    {
+      "sourceId": "TC-LOGIN-003",
+      "title": "Login with both fields empty",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-003] Login with both fields empty",
+      "disposition": "Scenario: [TC-LOGIN-003] Login with both fields empty"
+    },
+    {
+      "sourceId": "TC-LOGIN-004",
+      "title": "Login with username only",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-004] Login with username only",
+      "disposition": "Scenario: [TC-LOGIN-004] Login with username only"
+    },
+    {
+      "sourceId": "TC-LOGIN-005",
+      "title": "Login with password only",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-005] Login with password only",
+      "disposition": "Scenario: [TC-LOGIN-005] Login with password only"
+    },
+    {
+      "sourceId": "TC-LOGIN-006",
+      "title": "Login with invalid username",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-006] Login with invalid username",
+      "disposition": "Scenario: [TC-LOGIN-006] Login with invalid username"
+    },
+    {
+      "sourceId": "TC-LOGIN-007",
+      "title": "Login with invalid password",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-007] Login with invalid password",
+      "disposition": "Scenario: [TC-LOGIN-007] Login with invalid password"
+    },
+    {
+      "sourceId": "TC-LOGIN-008",
+      "title": "Login with invalid username and password",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-008] Login with invalid username and password",
+      "disposition": "Scenario: [TC-LOGIN-008] Login with invalid username and password"
+    },
+    {
+      "sourceId": "TC-LOGIN-009",
+      "title": "Login using locked_out_user",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-009] Login using locked_out_user",
+      "disposition": "Scenario: [TC-LOGIN-009] Login using locked_out_user"
+    },
+    {
+      "sourceId": "TC-LOGIN-010",
+      "title": "Login using problem_user",
+      "status": "candidate",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-010] Login using problem_user",
+      "disposition": "The source mentions known problem_user UI anomalies but does not identify their expected appearance; only login and inventory rendering are covered."
+    },
+    {
+      "sourceId": "TC-LOGIN-011",
+      "title": "Login using performance_glitch_user",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-011] Login using performance_glitch_user",
+      "disposition": "Scenario: [TC-LOGIN-011] Login using performance_glitch_user"
+    },
+    {
+      "sourceId": "TC-LOGIN-012",
+      "title": "Login using error_user",
+      "status": "candidate",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-012] Login using error_user",
+      "disposition": "The source says to verify account-specific behavior but does not state the behavior expected for error_user; only successful login is covered."
+    },
+    {
+      "sourceId": "TC-LOGIN-013",
+      "title": "Login using visual_user",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-013] Login using visual_user",
+      "disposition": "Scenario: [TC-LOGIN-013] Login using visual_user"
+    },
+    {
+      "sourceId": "TC-LOGIN-014",
+      "title": "Verify password masking",
+      "status": "automated",
+      "featureFile": "features/e2e-login.feature",
+      "scenarioName": "[TC-LOGIN-014] Verify password masking",
+      "disposition": "Scenario: [TC-LOGIN-014] Verify password masking"
+    },
+    {
+      "sourceId": "TC-LOGIN-015",
+      "title": "Enter script or SQL-like input",
+      "status": "manual-only",
+      "featureFile": "",
+      "scenarioName": "",
+      "disposition": "Security payload execution is not run against the public shared demo without an explicitly authorized test target."
+    },
+    {
+      "sourceId": "TC-INV-001",
+      "title": "Verify inventory page after login",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-001] Verify inventory page after login",
+      "disposition": "Scenario: [TC-INV-001] Verify inventory page after login"
+    },
+    {
+      "sourceId": "TC-INV-002",
+      "title": "Verify all products are displayed",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-002] Verify all products are displayed without duplication",
+      "disposition": "Scenario: [TC-INV-002] Verify all products are displayed without duplication"
+    },
+    {
+      "sourceId": "TC-INV-003",
+      "title": "Sort products by Name A to Z",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-003] Sort products by Name A to Z",
+      "disposition": "Scenario: [TC-INV-003] Sort products by Name A to Z"
+    },
+    {
+      "sourceId": "TC-INV-004",
+      "title": "Sort products by Name Z to A",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-004] Sort products by Name Z to A",
+      "disposition": "Scenario: [TC-INV-004] Sort products by Name Z to A"
+    },
+    {
+      "sourceId": "TC-INV-005",
+      "title": "Sort products by Price low to high",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-005] Sort products by Price low to high",
+      "disposition": "Scenario: [TC-INV-005] Sort products by Price low to high"
+    },
+    {
+      "sourceId": "TC-INV-006",
+      "title": "Sort products by Price high to low",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-006] Sort products by Price high to low",
+      "disposition": "Scenario: [TC-INV-006] Sort products by Price high to low"
+    },
+    {
+      "sourceId": "TC-INV-007",
+      "title": "Change sorting options repeatedly",
+      "status": "automated",
+      "featureFile": "features/e2e-inventory.feature",
+      "scenarioName": "[TC-INV-007] Change sorting options repeatedly",
+      "disposition": "Scenario: [TC-INV-007] Change sorting options repeatedly"
+    },
+    {
+      "sourceId": "TC-CART-001",
+      "title": "Add Sauce Labs Backpack to cart",
+      "status": "automated",
+      "featureFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-001] Add Sauce Labs Backpack to cart",
+      "disposition": "Scenario: [TC-CART-001] Add Sauce Labs Backpack to cart"
+    },
+    {
+      "sourceId": "TC-CART-002",
+      "title": "Add multiple products to cart",
+      "status": "automated",
+      "featureFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-002] Add multiple products to cart",
+      "disposition": "Scenario: [TC-CART-002] Add multiple products to cart"
+    },
+    {
+      "sourceId": "TC-CART-003",
+      "title": "Open shopping cart",
+      "status": "automated",
+      "featureFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-003] Open shopping cart and verify item details",
+      "disposition": "Scenario: [TC-CART-003] Open shopping cart and verify item details"
+    },
+    {
+      "sourceId": "TC-CART-004",
+      "title": "Remove product from inventory page",
+      "status": "automated",
+      "featureFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-004] Remove product from inventory page",
+      "disposition": "Scenario: [TC-CART-004] Remove product from inventory page"
+    },
+    {
+      "sourceId": "TC-CART-005",
+      "title": "Remove product from cart page",
+      "status": "automated",
+      "featureFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-005] Remove product from cart page",
+      "disposition": "Scenario: [TC-CART-005] Remove product from cart page"
+    },
+    {
+      "sourceId": "TC-CART-006",
+      "title": "Attempt checkout with empty cart",
+      "status": "blocked",
+      "featureFile": "",
+      "scenarioName": "",
+      "disposition": "Live SauceDemo accepts the empty cart into checkout and displays a Finish action at a $0.00 total; the documented expected result does not match the application."
+    },
+    {
+      "sourceId": "TC-CART-007",
+      "title": "Click Continue Shopping",
+      "status": "automated",
+      "featureFile": "features/e2e-cart.feature",
+      "scenarioName": "[TC-CART-007] Continue shopping from the cart",
+      "disposition": "Scenario: [TC-CART-007] Continue shopping from the cart"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-001",
+      "title": "Navigate from cart to checkout",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-001] Navigate from cart to checkout",
+      "disposition": "Scenario: [TC-CHECKOUT-001] Navigate from cart to checkout"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-002",
+      "title": "Enter all valid checkout information",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-002] Enter all valid checkout information",
+      "disposition": "Scenario: [TC-CHECKOUT-002] Enter all valid checkout information"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-003",
+      "title": "Submit all fields empty",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-003] Submit all fields empty",
+      "disposition": "Scenario: [TC-CHECKOUT-003] Submit all fields empty"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-004",
+      "title": "Submit without First Name",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-004] Submit without First Name",
+      "disposition": "Scenario: [TC-CHECKOUT-004] Submit without First Name"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-005",
+      "title": "Submit without Last Name",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-005] Submit without Last Name",
+      "disposition": "Scenario: [TC-CHECKOUT-005] Submit without Last Name"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-006",
+      "title": "Submit without Zip Code",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-006] Submit without Zip Code",
+      "disposition": "Scenario: [TC-CHECKOUT-006] Submit without Zip Code"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-007",
+      "title": "Enter short and long values",
+      "status": "blocked",
+      "featureFile": "",
+      "scenarioName": "",
+      "disposition": "The source does not define the supported short/long input limits, so a boundary value cannot be chosen without inventing a rule."
+    },
+    {
+      "sourceId": "TC-CHECKOUT-008",
+      "title": "Enter whitespace-only values",
+      "status": "blocked",
+      "featureFile": "",
+      "scenarioName": "",
+      "disposition": "Live SauceDemo accepts whitespace-only checkout fields and advances to the overview, contradicting the documented rejection expectation."
+    },
+    {
+      "sourceId": "TC-CHECKOUT-009",
+      "title": "Click Cancel during checkout",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-information.feature",
+      "scenarioName": "[TC-CHECKOUT-009] Cancel during checkout",
+      "disposition": "Scenario: [TC-CHECKOUT-009] Cancel during checkout"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-010",
+      "title": "Verify order overview for one product",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-overview.feature",
+      "scenarioName": "[TC-CHECKOUT-010] Verify order overview for one product",
+      "disposition": "Scenario: [TC-CHECKOUT-010] Verify order overview for one product"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-011",
+      "title": "Verify order overview for multiple products",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-overview.feature",
+      "scenarioName": "[TC-CHECKOUT-011] Verify order overview for multiple products",
+      "disposition": "Scenario: [TC-CHECKOUT-011] Verify order overview for multiple products"
+    },
+    {
+      "sourceId": "TC-CHECKOUT-012",
+      "title": "Cancel checkout from overview",
+      "status": "automated",
+      "featureFile": "features/e2e-checkout-overview.feature",
+      "scenarioName": "[TC-CHECKOUT-012] Cancel checkout from overview",
+      "disposition": "Scenario: [TC-CHECKOUT-012] Cancel checkout from overview"
+    },
+    {
+      "sourceId": "TC-ORDER-001",
+      "title": "Click Finish to complete order",
+      "status": "automated",
+      "featureFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-001] Finish checkout and display confirmation",
+      "disposition": "Scenario: [TC-ORDER-001] Finish checkout and display confirmation"
+    },
+    {
+      "sourceId": "TC-ORDER-002",
+      "title": "Verify order confirmation details",
+      "status": "automated",
+      "featureFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-002] Verify order confirmation details",
+      "disposition": "Scenario: [TC-ORDER-002] Verify order confirmation details"
+    },
+    {
+      "sourceId": "TC-ORDER-003",
+      "title": "Refresh confirmation page",
+      "status": "automated",
+      "featureFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-003] Refresh confirmation page",
+      "disposition": "Scenario: [TC-ORDER-003] Refresh confirmation page"
+    },
+    {
+      "sourceId": "TC-ORDER-004",
+      "title": "Click Generate PDF order",
+      "status": "automated",
+      "featureFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-004] Generate and download the order PDF",
+      "disposition": "Scenario: [TC-ORDER-004] Generate and download the order PDF"
+    },
+    {
+      "sourceId": "TC-ORDER-005",
+      "title": "Generate PDF when browser downloads are blocked",
+      "status": "manual-only",
+      "featureFile": "",
+      "scenarioName": "",
+      "disposition": "Browser download-blocking behavior requires a defined browser policy and expected user-facing message."
+    },
+    {
+      "sourceId": "TC-ORDER-006",
+      "title": "Navigate home after order completion",
+      "status": "automated",
+      "featureFile": "features/e2e-order-completion.feature",
+      "scenarioName": "[TC-ORDER-006] Navigate home after order completion",
+      "disposition": "Scenario: [TC-ORDER-006] Navigate home after order completion"
+    },
+    {
+      "sourceId": "TC-SESSION-001",
+      "title": "Logout from application",
+      "status": "automated",
+      "featureFile": "features/e2e-session-management.feature",
+      "scenarioName": "[TC-SESSION-001] Logout from application",
+      "disposition": "Scenario: [TC-SESSION-001] Logout from application"
+    },
+    {
+      "sourceId": "TC-SESSION-002",
+      "title": "Press browser Back after logout",
+      "status": "automated",
+      "featureFile": "features/e2e-session-management.feature",
+      "scenarioName": "[TC-SESSION-002] Press browser Back after logout",
+      "disposition": "Scenario: [TC-SESSION-002] Press browser Back after logout"
+    },
+    {
+      "sourceId": "TC-SESSION-003",
+      "title": "Reset application state",
+      "status": "automated",
+      "featureFile": "features/e2e-session-management.feature",
+      "scenarioName": "[TC-SESSION-003] Reset application state",
+      "disposition": "Scenario: [TC-SESSION-003] Reset application state"
+    }
+  ]
+}

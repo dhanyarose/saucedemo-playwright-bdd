@@ -2,12 +2,19 @@
 Feature: SauceDemo shopping cart
   Products added from the inventory remain visible in the shopping cart.
 
-  @smoke @TC_009 @TC_010 @TC_022
+  @TC_009 @TC_010 @TC_022
   Scenario: [TC_022] Add one product and verify the cart count
     Given I am on the inventory page with an empty cart
     When I add "Sauce Labs Backpack" to the cart
     Then the cart badge should show "1"
     And the product button should change to Remove for "Sauce Labs Backpack"
+
+  @TC_011
+  Scenario: [TC_011] Add multiple products to the cart
+    Given I am on the inventory page with an empty cart
+    When I add the configured sample products to the cart
+    Then the cart badge should show "2"
+    And the cart should contain both configured sample products
 
   @TC_023
   Scenario: [TC_023] Add two different products

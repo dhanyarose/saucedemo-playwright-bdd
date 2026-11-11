@@ -1,23 +1,20 @@
-# Test case analysis
+# Test case analysis — TestcasesEndToEnd.docx
 
-## Source format
+## Source and coverage
 
-Both files in `testcases/` have a `.docx` extension but contain UTF-8 tab-delimited text (not Word ZIP/DOCX data). Their original wording and IDs are preserved in the extracted Markdown files. The importer deliberately fails on a binary DOCX rather than silently misreading it.
-
-## Inventory
-
-- Source IDs found: 117.
-- Automated in this framework: 21.
-- Automation candidates not yet implemented: 83.
-- Blocked pending clarified acceptance criteria: 4.
-- Manual-only in the current environment: 9.
+- The current source file has a `.docx` extension but is UTF-8 tab-delimited text, not a binary DOCX package. Its wording and IDs are extracted to `source-test-cases.md`.
+- 50 source IDs were found and accounted for in the traceability matrix.
+- Automated: 43; candidate: 2; blocked: 3; manual-only: 2.
+- The sheet provides scenario titles and expected results but no per-case action steps; the BDD features supply the actions needed to reach those outcomes.
 
 ## Clarifications and limitations
 
-- TC_038 does not specify the application state or expected behavior when a product has no price.
-- TC_058 requires an agreed page-load performance threshold before it can have a deterministic pass/fail assertion.
-- TC_061 does not define how to expire or simulate a session.
-- TC_064 does not define which storage keys or session-clearing behavior are required.
-- Cross-browser/device coverage, real network throttling, password-manager autofill, clipboard restrictions, screen-reader compatibility, contrast, and zoom are not covered by the Chromium desktop smoke suite.
-- Some source cases provide only expected results, not interaction steps or test data; the inventory leaves those fields empty rather than inventing procedures.
-- SauceDemo contains documented demo-user behaviors and known user-specific UI issues; product-specific expected results should be treated as environment-sensitive.
+- TC-CART-006: Live SauceDemo accepts the empty cart into checkout and displays a Finish action at a $0.00 total; the documented expected result does not match the application.
+- TC-CHECKOUT-007: The source does not define the supported short/long input limits, so a boundary value cannot be chosen without inventing a rule.
+- TC-CHECKOUT-008: Live SauceDemo accepts whitespace-only checkout fields and advances to the overview, contradicting the documented rejection expectation.
+- TC-LOGIN-010: The source mentions known problem_user UI anomalies but does not identify their expected appearance; only login and inventory rendering are covered.
+- TC-LOGIN-012: The source says to verify account-specific behavior but does not state the behavior expected for error_user; only successful login is covered.
+- TC-LOGIN-015: Security payload execution is not run against the public shared demo without an explicitly authorized test target.
+- TC-ORDER-005: Browser download-blocking behavior requires a defined browser policy and expected user-facing message.
+- Checkout field lengths and accepted boundary limits are not defined in the source; no boundary thresholds are invented.
+- The password is not kept in JSON; tests read it from TEST_PASSWORD as configured by passwordEnv.

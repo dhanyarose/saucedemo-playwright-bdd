@@ -19,6 +19,14 @@ export class InventoryPage {
     return this.page.locator('[data-test="inventory-item-price"]');
   }
 
+  productImages(): Locator {
+    return this.items().locator("img");
+  }
+
+  sortControl(): Locator {
+    return this.page.getByRole("combobox", { name: "Sort products" });
+  }
+
   async addProduct(name: string): Promise<void> {
     const item = this.items().filter({ has: this.page.getByText(name, { exact: true }) });
     await item.getByRole("button", { name: "Add to cart" }).click();
@@ -30,7 +38,7 @@ export class InventoryPage {
   }
 
   async sortBy(label: string): Promise<void> {
-    await this.page.getByRole("combobox", { name: "Sort products" }).selectOption({ label });
+    await this.sortControl().selectOption({ label });
   }
 
   cartBadge() {

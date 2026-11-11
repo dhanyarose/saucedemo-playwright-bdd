@@ -52,7 +52,7 @@ When("I navigate back to the inventory page", async function (this: TestWorld) {
 });
 
 Then("the cart should contain {string}", async function (this: TestWorld, product: string) {
-  await expect(new CartPage(this.getPage()).productNames()).toContainText(product);
+  await expect(new CartPage(this.getPage()).itemNamed(product)).toBeVisible();
 });
 
 Then("the cart should contain both configured sample products", async function (this: TestWorld) {
@@ -74,7 +74,7 @@ Then("the cart should be empty", async function (this: TestWorld) {
 });
 
 Then("the cart should retain {string}", async function (this: TestWorld, product: string) {
-  await expect(new CartPage(this.getPage()).productNames()).toContainText(product);
+  await expect(new CartPage(this.getPage()).itemNamed(product)).toBeVisible();
 });
 
 Then("the inventory price for {string} should match its cart price", async function (

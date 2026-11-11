@@ -4,11 +4,11 @@ import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import { TestWorld } from "./world";
 
-setDefaultTimeout(15_000);
+setDefaultTimeout(45_000);
 
 Before(async function (this: TestWorld) {
   this.browser = await chromium.launch({ headless: process.env.HEADLESS !== "false" });
-  this.context = await this.browser.newContext();
+  this.context = await this.browser.newContext({ acceptDownloads: true });
   await this.context.tracing.start({ screenshots: true, snapshots: true });
   this.page = await this.context.newPage();
 });

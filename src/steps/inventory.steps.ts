@@ -19,6 +19,21 @@ Then("the inventory heading should be {string}", async function (this: TestWorld
   await expect(new InventoryPage(this.getPage()).title()).toHaveText(heading);
 });
 
+Then("each product card should display a name, description, price, and add-to-cart action", async function (this: TestWorld) {
+  const inventory = new InventoryPage(this.getPage());
+  const items = inventory.items();
+  await expect(items).toHaveCount(6);
+
+  const itemCount = await items.count();
+  for (let index = 0; index < itemCount; index += 1) {
+    const item = items.nth(index);
+    await expect(item.locator('[data-test="inventory-item-name"]')).toBeVisible();
+    await expect(item.locator('[data-test="inventory-item-desc"]')).toBeVisible();
+    await expect(item.locator('[data-test="inventory-item-price"]')).toBeVisible();
+    await expect(item.getByRole("button", { name: /add to cart/i })).toBeVisible();
+  }
+});
+
 When("I sort products by {string}", async function (this: TestWorld, label: string) {
   await new InventoryPage(this.getPage()).sortBy(label);
 });
