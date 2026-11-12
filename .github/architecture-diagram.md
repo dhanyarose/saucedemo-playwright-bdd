@@ -1,4 +1,4 @@
-# Architecture Diagram
+n# Architecture Diagram
 
 This repository contains a TypeScript-based browser automation suite for SauceDemo, not the application being tested. Cucumber scenarios orchestrate Playwright page objects against a configured SauceDemo environment and produce local reports and failure artifacts.
 
