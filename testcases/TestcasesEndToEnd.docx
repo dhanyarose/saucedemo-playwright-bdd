@@ -1,0 +1,79 @@
+SAUCEDEMO – FUNCTIONAL TEST CASES
+1. Login test cases
+ID	Type	Test scenario	Expected result
+TC-LOGIN-001	Positive	Verify login page loads	Login page displays username, password and Login button.
+TC-LOGIN-002	Positive	Login with valid credentials	User successfully navigates to inventory page.
+TC-LOGIN-003	Negative	Login with both fields empty	Required username validation appears.
+TC-LOGIN-004	Negative	Login with username only	Password-required validation appears.
+TC-LOGIN-005	Negative	Login with password only	Username-required validation appears.
+TC-LOGIN-006	Negative	Login with invalid username	Appropriate authentication error appears.
+TC-LOGIN-007	Negative	Login with invalid password	Appropriate authentication error appears.
+TC-LOGIN-008	Negative	Login with invalid username and password	Login is rejected.
+TC-LOGIN-009	Negative	Login using locked_out_user	User receives locked-out error message.
+TC-LOGIN-010	Positive / Special	Login using problem_user	Login behaviour and known UI anomalies are verified.
+TC-LOGIN-011	Positive / Special	Login using performance_glitch_user	User logs in; inventory eventually loads.
+TC-LOGIN-012	Positive / Special	Login using error_user	Account-specific behaviour is verified.
+TC-LOGIN-013	Positive / Special	Login using visual_user	User logs in and UI layout is checked.
+TC-LOGIN-014	Security	Verify password masking	Password characters are masked.
+TC-LOGIN-015	Negative / Security	Enter script or SQL-like input	Input is handled safely; no unauthorized login or script execution occurs.
+
+2. Inventory and product sorting
+ID	Type	Test scenario	Expected result
+TC-INV-001	Positive	Verify inventory page after login	Product listing and sorting controls are displayed.
+TC-INV-002	Positive	Verify all products are displayed	Expected products appear without duplication.
+TC-INV-003	Positive	Sort products by Name A to Z	Products appear alphabetically ascending.
+TC-INV-004	Positive	Sort products by Name Z to A	Products appear alphabetically descending.
+TC-INV-005	Positive	Sort products by Price low to high	Products appear in ascending price order.
+TC-INV-006	Positive	Sort products by Price high to low	Products appear in descending price order.
+TC-INV-007	Positive	Change sorting options repeatedly	Product listing updates correctly for every selection.
+
+3. Shopping cart test cases
+ID	Type	Test scenario	Expected result
+TC-CART-001	Positive	Add Sauce Labs Backpack to cart	Product is added and cart badge displays 1.
+TC-CART-002	Positive	Add multiple products to cart	Both products are added and badge displays correct count.
+TC-CART-003	Positive	Open shopping cart	Selected product, price and quantity are displayed.
+TC-CART-004	Positive	Remove product from inventory page	Product is removed and cart count updates.
+TC-CART-005	Positive	Remove product from cart page	Product is removed from cart.
+TC-CART-006	Negative	Attempt checkout with empty cart	No order can be created without products.
+TC-CART-007	Positive	Click Continue Shopping	User returns to inventory page.
+
+4. Checkout information test cases
+ID	Type	Test scenario	Expected result
+TC-CHECKOUT-001	Positive	Navigate from cart to checkout	Checkout information form is displayed.
+TC-CHECKOUT-002	Positive	Enter all valid checkout information	User navigates to checkout overview.
+TC-CHECKOUT-003	Negative	Submit all fields empty	Required-field validation appears.
+TC-CHECKOUT-004	Negative	Submit without First Name	First Name validation appears.
+TC-CHECKOUT-005	Negative	Submit without Last Name	Last Name validation appears.
+TC-CHECKOUT-006	Negative	Submit without Zip Code	Zip Code validation appears.
+TC-CHECKOUT-007	Boundary	Enter short and long values	Valid values within supported limits are accepted.
+TC-CHECKOUT-008	Negative	Enter whitespace-only values	Whitespace-only required fields are rejected.
+TC-CHECKOUT-009	Positive	Click Cancel during checkout	User exits checkout without placing an order.
+
+5. Checkout overview test cases
+ID	Type	Test scenario	Expected result
+TC-CHECKOUT-010	Positive	Verify order overview for one product	Product, quantity, item total, tax and final total are correct.
+TC-CHECKOUT-011	Positive	Verify order overview for multiple products	All products and calculated totals are correct.
+TC-CHECKOUT-012	Positive	Cancel checkout from overview	User exits checkout without completing the order.
+
+6. Order completion and PDF generation
+ID	Type	Test scenario	Expected result
+TC-ORDER-001	Positive	Click Finish to complete order	Order confirmation page is displayed.
+TC-ORDER-002	Positive	Verify order confirmation details	Success message and order confirmation information appear.
+TC-ORDER-003	Negative	Refresh confirmation page	Refresh does not create a duplicate order.
+TC-ORDER-004	Positive	Click Generate PDF order	PDF is generated and downloaded successfully.
+TC-ORDER-005	Negative	Generate PDF when browser downloads are blocked	Application handles the blocked download gracefully.
+TC-ORDER-006	Positive	Navigate home after order completion	User returns to inventory page.
+
+7. Session management test cases
+ID	Type	Test scenario	Expected result
+TC-SESSION-001	Positive	Logout from application	User returns to login page.
+TC-SESSION-002	Negative	Press browser Back after logout	Protected inventory content is not accessible as an authenticated session.
+TC-SESSION-003	Positive	Reset application state	Cart and application state return to initial state.
+
+Test type	Coverage
+Positive	27
+Negative	17
+Boundary	1
+Security	2
+Special account behaviour	3
+Total	50
