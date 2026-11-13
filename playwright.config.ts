@@ -10,8 +10,9 @@ export default defineConfig({
   workers: 1,
   use: {
     baseURL: environment.baseURL,
-    headless: true,
+    headless: false,
+    trace: "on",
     screenshot: "only-on-failure",
-    trace: "retain-on-failure"
+    video: 'retain-on-failure'
   }
 });

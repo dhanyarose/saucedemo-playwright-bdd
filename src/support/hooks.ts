@@ -7,9 +7,9 @@ import { TestWorld } from "./world";
 setDefaultTimeout(45_000);
 
 Before(async function (this: TestWorld) {
-  this.browser = await chromium.launch({ headless: process.env.HEADLESS !== "false" });
+  this.browser = await chromium.launch({ headless: process.env.HEADLESS == "false"});
   this.context = await this.browser.newContext({ acceptDownloads: true });
-  await this.context.tracing.start({ screenshots: true, snapshots: true });
+  await this.context.tracing.start({ screenshots: true, snapshots: true, sources: true });
   this.page = await this.context.newPage();
 });
 
