@@ -1,4 +1,4 @@
-n# Architecture Diagram
+# Architecture Diagram
 
 This repository contains a TypeScript-based browser automation suite for SauceDemo, not the application being tested. Cucumber scenarios orchestrate Playwright page objects against a configured SauceDemo environment and produce local reports and failure artifacts.
 
@@ -25,6 +25,13 @@ flowchart TD
         EnvConfig["Environment URL configuration"]
         JsonData["JSON test data"]
         Secret["Environment password"]
+        SourceCases["Source cases in test-cases"]
+        CaseImporters["Source case importers"]
+        CaseInventory["Generated case inventory"]
+        TSConfig["tsconfig.json"]
+        TypeScript["TypeScript compiler"]
+        TsNode["ts-node loader"]
+        Typecheck["npm run typecheck"]
     end
     subgraph TargetLayer["System Under Test"]
         SauceDemo["SauceDemo web application"]
@@ -36,8 +43,6 @@ flowchart TD
     end
 
     Features -->|"scenarios"| Cucumber
-    Cucumber -->|"loads"| Steps
-    Cucumber -->|"runs hooks"| Hooks
     Steps -->|"reuse flows"| Journey
     Steps -->|"assert and interact"| Pages
     Journey -->|"compose flows"| Pages
@@ -46,6 +51,15 @@ flowchart TD
     EnvConfig -->|"selects base URL"| World
     JsonData -->|"provides test values"| Steps
     Secret -->|"provides password"| Steps
+    SourceCases -->|"feeds"| CaseImporters
+    CaseImporters -->|"writes inventory alongside sources"| CaseInventory
+    TSConfig -->|"configures"| TypeScript
+    TSConfig -->|"configures"| TsNode
+    Typecheck -->|"runs"| TypeScript
+    TypeScript -->|"checks"| Steps
+    Cucumber -->|"registers"| TsNode
+    TsNode -->|"loads"| Steps
+    TsNode -->|"loads"| Hooks
     Browser -->|"HTTPS browser actions"| SauceDemo
     Cucumber -->|"formats test results"| Allure
     Hooks -->|"capture on failure"| Artifacts
@@ -58,20 +72,20 @@ flowchart TD
 |---|---|---:|---|
 | Specifications and runner | Gherkin, Cucumber.js | Cucumber 13.3.0 | Express scenarios and execute step definitions |
 | Automation | TypeScript, Playwright, Chromium | TypeScript 5.9.3; Playwright 1.65.0 | Drive and inspect the browser |
+| TypeScript tooling | tsconfig.json, ts-node, TypeScript | ts-node 10.9.2; TypeScript 5.9.3 | Share compiler settings with type-checking and Cucumber loading |
 | Environment configuration | dotenv, Node.js | dotenv 16.6.1; Node.js 22.12+ | Load environment selection and URL from process environment |
-| Test data | JSON and environment variables | N/A | Store non-secret values in JSON and password outside source data |
+| Test data | JSON, environment variables, test-cases/ | N/A | Store source cases, generated inventory, and non-secret runtime values |
 | Reporting | Allure Cucumber adapter and CLI | 3.14.0; 2.34.0 | Write results and generate an HTML report |
 
 ### Data Storage & External Services
 
-The test suite has no application database, cache, or message broker. Non-secret user, product, and checkout values are read from `test-data/testdata.json`; the password and environment-specific base URL are supplied through environment variables. Playwright drives the configured SauceDemo web application over HTTP or HTTPS. Cucumber Allure results, failure screenshots, traces, and downloaded order PDFs are written to local report/output directories.
+The test suite has no application database, cache, or message broker. Source case documents and generated case inventories share `test-cases/`; non-secret user, product, and checkout values are read from `test-data/testdata.json`. The password and environment-specific base URL are supplied through environment variables. Playwright drives the configured SauceDemo web application over HTTP or HTTPS. Cucumber Allure results, failure screenshots, traces, and downloaded order PDFs are written to local report/output directories.
 
 ### Key Architectural Decisions
 
 - Gherkin features are the behavior specifications; Cucumber step definitions bind them to TypeScript automation.
-- Page objects centralize UI selectors and interactions, while reusable journey helpers compose common end-to-end flows.
-- Each scenario gets its own browser context and page. Failed scenarios attach screenshots and retain Playwright traces.
-- `playwright.config.ts` is present for Playwright Test utilities, but the active test runner is Cucumber and its browser lifecycle is configured separately.
+- Page objects and reusable journeys organize browser interactions; each scenario gets an isolated browser context and page with failure screenshots and traces.
+- `tsconfig.json` configures type-checking and ts-node; source cases and generated inventories share `test-cases/`. Cucumber remains the active runner, separate from Playwright Test configuration.
 
 ## Component Relationships
 
@@ -91,10 +105,21 @@ flowchart LR
         cSite["SauceDemo site"]
     end
     subgraph cRuntime["Scenario Runtime"]
+        cCucumber["Cucumber runner"]
         cHooks["Before and After hooks"]
         cWorld["TestWorld"]
         cBrowser["Chromium browser"]
         cConfig["Environment configuration"]
+        cCucumberConfig["cucumber.js"]
+    end
+    subgraph cTools["TypeScript and Case Tooling"]
+        cTSConfig["tsconfig.json"]
+        cCompiler["TypeScript compiler"]
+        cTSNode["ts-node loader"]
+        cTypecheck["npm run typecheck"]
+        cCaseSources["Source cases in test-cases"]
+        cImporter["Source case importers"]
+        cInventory["Generated case inventory"]
     end
     subgraph cData["Test Data"]
         cDataHelper["Test data utilities"]
@@ -107,7 +132,10 @@ flowchart LR
         cDownload["Order PDF download"]
     end
 
-    cFeatures -->|"bind steps"| cSteps
+    cFeatures -->|"executed by"| cCucumber
+    cCucumber -->|"loads"| cSteps
+    cCucumber -->|"loads hooks"| cHooks
+    cCucumberConfig -->|"configures"| cCucumber
     cSteps -->|"compose common flows"| cJourneys
     cSteps -->|"call page interactions"| cPages
     cJourneys -->|"use page objects"| cPages
@@ -116,6 +144,14 @@ flowchart LR
     cHooks -->|"launch and close"| cBrowser
     cWorld -->|"provides page"| cSteps
     cWorld -->|"resolves base URL"| cConfig
+    cTypecheck -->|"runs"| cCompiler
+    cTSConfig -->|"configures"| cCompiler
+    cTSConfig -->|"configures"| cTSNode
+    cCucumberConfig -->|"registers"| cTSNode
+    cTSNode -->|"loads"| cSteps
+    cTSNode -->|"loads"| cHooks
+    cCaseSources -->|"feeds"| cImporter
+    cImporter -->|"writes"| cInventory
     cConfig -->|"loads dotenv and URL"| cEnv
     cSteps -->|"read values"| cDataHelper
     cJourneys -->|"read values"| cDataHelper
@@ -139,6 +175,8 @@ flowchart LR
 | `src/support/hooks.ts` | Scenario runtime | Cucumber hooks | Launch Chromium, create context/page, capture failure artifacts, and clean up |
 | `src/support/world.ts` | Scenario runtime | Cucumber World | Hold per-scenario browser state and expose the selected base URL |
 | `config/environments.ts` | Scenario runtime | Configuration module | Validate `TEST_ENV` and its matching absolute HTTP(S) base URL |
+| `tsconfig.json` | TypeScript tooling | TypeScript project configuration | Define shared compiler options and included TypeScript files for type-checking and ts-node |
+| `test-cases/` | Case tooling | Source documents and generated inventory | Keep source cases and imported case artifacts in one directory |
 | `src/utils/test-data.ts` | Test data | Data access utility | Read typed test inputs and require password from its configured environment variable |
 | `test-data/testdata.json` | Test data | JSON data store | Supply non-secret login, product, and checkout values |
 | `cucumber.js` | Runner and outputs | Cucumber configuration | Discover features and TypeScript support/step files; configure Allure formatting |
