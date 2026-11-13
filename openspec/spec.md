@@ -1,7 +1,8 @@
 # SauceDemo End-to-End Behavior Baseline
 
 **Status**: Baseline snapshot of the existing Playwright/Cucumber suite  
-**Source inventory**: `testcases/TestcasesEndToEnd.docx`  
+**Source inventory**: `test-cases/TestcasesEndToEnd.docx`
+
 **Source-to-script map**: `test-cases/traceability-matrix.md`
 
 ## Purpose and scope

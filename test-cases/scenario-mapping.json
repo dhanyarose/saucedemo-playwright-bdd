@@ -1,5 +1,5 @@
 {
-  "source": "testcases/TestcasesEndToEnd.docx",
+  "source": "test-cases/TestcasesEndToEnd.docx",
   "scenarios": [
     {
       "sourceId": "TC-LOGIN-001",

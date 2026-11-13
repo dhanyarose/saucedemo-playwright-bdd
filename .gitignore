@@ -6,5 +6,5 @@ reports/*
 .env
 .env.*
 !.env.example
-testcases/*.docx
+test-cases/*.docx
 .playwright-mcp/

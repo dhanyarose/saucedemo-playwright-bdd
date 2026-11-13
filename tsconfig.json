@@ -9,5 +9,8 @@
     "resolveJsonModule": true,
     "types": ["node"]
   },
-  "include": ["config/**/*.ts", "src/**/*.ts", "playwright.config.ts"]
+  "include": ["config/**/*.ts", "src/**/*.ts", "playwright.config.ts"],
+  "ts-node": {
+    "files": true
+  }
 }

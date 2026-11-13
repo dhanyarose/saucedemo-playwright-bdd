@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const inputDirectory = path.join(root, "testcases");
+const inputDirectory = path.join(root, "test-cases");
 const outputDirectory = path.join(root, "test-cases");
 const featureDirectory = path.join(root, "features");
 const sources = ["loginTestcases.docx", "saucedemo.docx"];
@@ -205,7 +205,7 @@ function main() {
       "",
       "## Source format",
       "",
-      "Both files in `testcases/` have a `.docx` extension but contain UTF-8 tab-delimited text (not Word ZIP/DOCX data). Their original wording and IDs are preserved in the extracted Markdown files. The importer deliberately fails on a binary DOCX rather than silently misreading it.",
+      "Both files in `test-cases/` have a `.docx` extension but contain UTF-8 tab-delimited text (not Word ZIP/DOCX data). Their original wording and IDs are preserved in the extracted Markdown files. The importer deliberately fails on a binary DOCX rather than silently misreading it.",
       "",
       "## Inventory",
       "",

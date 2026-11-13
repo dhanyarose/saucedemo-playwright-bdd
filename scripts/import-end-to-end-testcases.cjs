@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const sourcePath = path.join(root, "testcases", "TestcasesEndToEnd.docx");
+const sourcePath = path.join(root, "test-cases", "TestcasesEndToEnd.docx");
 const outputDirectory = path.join(root, "test-cases");
 const featureDirectory = path.join(root, "features");
 const blockedCases = new Map([
@@ -128,7 +128,7 @@ function main() {
   fs.writeFileSync(
     path.join(outputDirectory, "test-case-inventory.json"),
     `${JSON.stringify({
-      source: "testcases/TestcasesEndToEnd.docx",
+      source: "test-cases/TestcasesEndToEnd.docx",
       sourceFormatNote: "The supplied .docx file contains UTF-8 tab-delimited text rather than a binary Word document.",
       cases
     }, null, 2)}\n`
@@ -137,7 +137,7 @@ function main() {
   fs.writeFileSync(
     path.join(outputDirectory, "scenario-mapping.json"),
     `${JSON.stringify({
-      source: "testcases/TestcasesEndToEnd.docx",
+      source: "test-cases/TestcasesEndToEnd.docx",
       scenarios: cases.map(({ id, title, automationStatus, automationFile, scenarioName, disposition }) => ({
         sourceId: id,
         title,

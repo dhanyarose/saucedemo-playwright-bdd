@@ -34,7 +34,7 @@
 
 | Decision | Source | Details |
 |---|---|---|
-| reuse as case inventory; create new automation | User-provided `testcases/` files | Both `.docx`-named files are UTF-8 tab-delimited text, not binary Word documents. Their IDs were imported and mapped in `test-cases/traceability-matrix.md`. |
+| reuse as case inventory; create new automation | User-provided `test-cases/` files | The `.docx`-named source files are UTF-8 tab-delimited text, not binary Word documents. Their IDs were imported and mapped in `test-cases/traceability-matrix.md`. |
 
 ## Coverage and gaps (inventory snapshot from 2026-11-09)
 

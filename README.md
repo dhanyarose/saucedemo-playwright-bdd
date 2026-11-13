@@ -1,6 +1,6 @@
 # SauceDemo Playwright BDD
 
-Cucumber runs Gherkin scenarios, Playwright drives Chromium, page objects hold UI interactions, and JSON keeps non-secret test data separate. The supplied cases are in `testcases/`; the generated inventory and case-to-scenario mapping are in `test-cases/`.
+Cucumber runs Gherkin scenarios, Playwright drives Chromium, page objects hold UI interactions, and JSON keeps non-secret test data separate. Source test cases and their generated inventory and case-to-scenario mapping are kept together in `test-cases/`.
 
 ## Prerequisites and setup
 
@@ -28,8 +28,7 @@ src/steps/              Cucumber step definitions
 src/support/            Per-scenario browser lifecycle and failure artifacts
 src/utils/              Typed test-data access
 test-data/              Non-secret JSON data
-testcases/              Supplied source test-case files
-test-cases/              Extracted text, inventory, analysis, traceability
+test-cases/              Source test-case files, extracted text, inventory, analysis, traceability
 scripts/                 Source-case importer
 reports/                 Allure results and failure traces (generated)
 ```
@@ -38,7 +37,7 @@ reports/                 Allure results and failure traces (generated)
 
 ## Source cases and traceability
 
-The current end-to-end source is `testcases/TestcasesEndToEnd.docx`. It contains 50 SauceDemo cases covering login, inventory, cart, checkout, order completion, and sessions. The file is UTF-8 tab-delimited text with a `.docx` extension, not a binary Word document. Test data is in `test-data/testdata.json`; the password is read from `TEST_PASSWORD`, not stored in JSON.
+The current end-to-end source is `test-cases/TestcasesEndToEnd.docx`. It contains 50 SauceDemo cases covering login, inventory, cart, checkout, order completion, and sessions. The file is UTF-8 tab-delimited text with a `.docx` extension, not a binary Word document. Test data is in `test-data/testdata.json`; the password is read from `TEST_PASSWORD`, not stored in JSON.
 
 The new Gherkin files are `features/e2e-*.feature`; their ID-specific step definitions are under `src/steps/TC_*.steps.ts`, with checkout and order page objects under `src/pages/`. Run `npm run test:end-to-end:inventory` to regenerate the extracted source, inventory, analysis, and traceability matrix after updating the sheet. See `test-cases/traceability-matrix.md` for every source ID and its implementation status. Cases with undefined acceptance criteria, missing boundary limits, or app behavior that conflicts with the expected result are marked blocked or manual-only rather than reported as passing.
 

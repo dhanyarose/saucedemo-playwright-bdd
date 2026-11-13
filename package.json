@@ -16,7 +16,7 @@
     "test:qa": "cross-env TEST_ENV=qa cucumber-js",
     "test:staging": "cross-env TEST_ENV=staging cucumber-js",
     "test:inventory": "node scripts/import-test-cases.cjs",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "allure:generate": "allure generate reports/allure-results --clean -o reports/allure-report",
     "allure:open": "allure open reports/allure-report",
     "clean:reports": "node -e \"require('node:fs').rmSync('reports',{recursive:true,force:true})\""

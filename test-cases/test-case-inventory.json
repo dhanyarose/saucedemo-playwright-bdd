@@ -1,5 +1,5 @@
 {
-  "source": "testcases/TestcasesEndToEnd.docx",
+  "source": "test-cases/TestcasesEndToEnd.docx",
   "sourceFormatNote": "The supplied .docx file contains UTF-8 tab-delimited text rather than a binary Word document.",
   "cases": [
     {

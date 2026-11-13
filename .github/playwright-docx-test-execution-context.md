@@ -20,7 +20,7 @@ Do not assume the application is SauceDemo unless the DOCX or user explicitly sa
 
 1. Locate the DOCX path supplied by the user. Do not silently substitute another document.
 2. Read/extract the complete document, including tables, headings, test case IDs, preconditions, steps, test data, and expected results.
-   - For the updated SauceDemo suite, the current authoritative source is `testcases/TestcasesEndToEnd.docx`; it supersedes earlier sheets for the current end-to-end inventory. Read the matching `test-data/testdata.json` as the supplied data source.
+   - For the updated SauceDemo suite, the current authoritative source is `test-cases/TestcasesEndToEnd.docx`; it supersedes earlier sheets for the current end-to-end inventory. Read the matching `test-data/testdata.json` as the supplied data source.
 3. Prefer a DOCX parser such as Mammoth (`mammoth`) to extract DOCX content to HTML, then convert to Markdown or structured JSON if useful. For complex tables, inspect the extracted output and preserve row/column relationships.
 4. If the DOCX cannot be accessed, ask the user to attach it or provide its exact workspace path. Do not invent test cases or claim the file was read.
 5. Create `test-cases/source-test-cases.md` as a readable extracted copy. Preserve original wording and IDs. Do not silently rewrite expected results.
